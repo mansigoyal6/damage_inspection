@@ -39,4 +39,8 @@ def create_app():
         logging.error(f"Unhandled Exception: {e}")
         return jsonify({'error': 'an unexpected error occured.'}), 500
 
+    @app.route('/')
+    def index():
+        return jsonify({"message": "Damage Inspection API is running."})
+
     return app
